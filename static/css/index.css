@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;1,300;1,400;1,500&display=swap');
+.alert {
+    color: lightgreen;
+    font-size: 22px;
+    font-weight: bold;
+    background-color: #040404;
+    opacity: 0.7;
+    border: 0;
+    border-radius: 10px;
+}
+.sec11 i{
+    margin-right: 10px;
+}
+.inner-page-banner{
+    padding: 90px 0 !important;
+}

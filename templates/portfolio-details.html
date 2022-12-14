@@ -1,0 +1,160 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block body %}
+        <div class="inner-page-banner">
+          <div class="container">
+            <div
+              class="row justify-content-center align-items-center text-center"
+            >
+            <div style="text-align: center !important;" class="col-lg-12">
+                    
+                                {% if messages %}
+                                    {% for message in messages %}
+                                        {% if message.tags == "success" %}
+                                            <div class="alert alert-success" role="alert">
+                                                <i class="fa-sharp fa-solid fa-circle-check"></i>{{ message }}
+                                            </div>
+                                        {% endif %}
+                                    {% endfor %}
+                    
+                                {% endif %}
+                            </div>
+              <div class="col-md-10">
+                <div class="banner-content">
+                  <h1>{{work.name}}</h1>
+                  <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb gap-3">
+                      <li class="breadcrumb-item">
+                        <a href="{% url 'index' %}">Home</a>
+                      </li>
+                      <li class="breadcrumb-item active" aria-current="page">
+                        Portfolio Details
+                      </li>
+                    </ol>
+                  </nav>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio-details-pages pt-120 mb-120">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-8">
+                <div class="title">
+                  <h3>Welcome to {{work.name}} Gallery</h3>
+                  <p>
+                    {{work.description}}
+                  </p>
+                </div>
+                {% comment %} <div class="download-link mb-40">
+                  <p>
+                    Free Download Link :
+                    <a href="#">unsplash.com/s/photos/wedding</a>
+                  </p>
+                </div> {% endcomment %}
+              </div>
+              <div class="col-lg-4">
+                <div class="client-info">
+                  <p><span>Client :</span>{{work.client}}</p>
+                  <p><span>Categories :</span>{{work.category.name}}</p>
+                  <p><span>Venue :</span>{{work.location}}</p>
+                  <p><span>Date :</span>{{work.date}}</p>
+                </div>
+              </div>
+            </div>
+            <div class="row g-4">
+                {% for image in work.images.all %}
+              <div class="col-lg-4 col-sm-6 col-12">
+                <a
+                  href="{{image.image.url}}"
+                  class="portfolio-img"
+                  data-fancybox="gallery"
+                >
+                  <img
+                    class="img-fluid"
+                    src="{{image.image.url}}"
+                    style="width:356px ;height:257px;object-fit:cover;"
+                    alt="image"
+                  />
+                </a>
+              </div>
+              {% endfor %}
+              
+            </div>
+          </div>
+        </div>
+
+        <div class="home1-booking-area mb-120">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-lg-10">
+                <div class="booking-wraper">
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="section-title1 text-center">
+                        <h2>Booking</h2>
+                        <p>
+                          As Vintage decided to have a closer look into
+                          fast-paced New York web design realm in.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <form method="POST">
+                    {% csrf_token %}
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-inner">
+                          <label>Your Name (required)</label>
+                          {{form.name|as_crispy_field}}
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-inner">
+                          <label>Your Phone (required)</label>
+                          {{form.number|as_crispy_field}}
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-inner">
+                          <label>Your E-mail (required)</label>
+                          {{form.email|as_crispy_field}}
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-inner date">
+                          <label>Booking Date</label>
+                          {{form.book_date|as_crispy_field}}
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-inner">
+                          <label>Type Your Message</label>
+                          {{form.message|as_crispy_field}}
+                        </div>
+                      </div>
+                      <div
+                        class="col-md-12 d-flex justify-content-center pt-20"
+                      >
+                        <div class="form-inner send-btn">
+                          <button
+                            class="primary-btn3 button-hover-two"
+                            type="submit"
+                          >
+                            Send Now
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      {% endblock body %} 

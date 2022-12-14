@@ -1,0 +1,147 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block body %}
+
+        <div class="inner-page-banner">
+          <div class="container">
+            <div
+              class="row justify-content-center align-items-center text-center"
+            >
+              <div class="col-md-6">
+                <div class="sec11 container mb-5">
+                            <div style="text-align: center !important;" class="col-lg-12">
+                    
+                                {% if messages %}
+                                    {% for message in messages %}
+                                        {% if message.tags == "success" %}
+                                            <div class="alert alert-success" role="alert">
+                                                <i class="fa-sharp fa-solid fa-circle-check"></i>{{ message }}
+                                            </div>
+                                        {% endif %}
+                                    {% endfor %}
+                    
+                                {% endif %}
+                            </div>
+                        </div>
+                <div class="banner-content">
+                  <h1>Contact Us</h1>
+                  <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb gap-3">
+                      <li class="breadcrumb-item">
+                        <a href="{% url 'index' %}">Home</a>
+                      </li>
+                      <li class="breadcrumb-item active" aria-current="page">
+                        Contact Us
+                      </li>
+                    </ol>
+                  </nav>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-us-page pt-120 mb-120">
+          <div class="container">
+            <div class="row mb-120 g-4">
+              <div class="col-lg-6">
+                {% for contact in contact %}
+                <div class="contact-left">
+                  <h2>{{contact.title}}</h2>
+                  <p>
+                    {{contact.description}}
+                  </p>
+                  <ul>
+                    <li>
+                      <div class="icon">
+                        <i class="bi bi-geo-alt-fill"></i>
+                      </div>
+                      <div class="content">
+                        <h6>
+                          <a
+                            >{{contact.location}}.</a
+                          >
+                        </h6>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="icon">
+                        <i class="bi bi-telephone-fill"></i>
+                      </div>
+                      <div class="content">
+                        <h6>
+                          <a href="tel:+{{contact.number}}">{{contact.number}}</a>
+                        </h6>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="icon">
+                        <i class="bi bi-chat-left-text-fill"></i>
+                      </div>
+                      <div class="content">
+                        <h6>
+                          <a>
+                            {{contact.email}}
+                          </a>
+                          
+                        </h6>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                {% endfor %}
+              </div>
+
+              <div class="col-lg-6">
+                <div class="contact-form">
+                  <div class="number-of-comment">
+                    <h5>Get a Message</h5>
+                  </div>
+                  <form method="POST">
+                    {% csrf_token %}
+                    <div class="form-inner">
+                      <label>Your Name (required)</label>
+                      {{form.name|as_crispy_field}}
+                    </div>
+                    <div class="form-inner">
+                      <label>Your E-mail (required)</label>
+                      {{form.email|as_crispy_field}}
+                    </div>
+                    <div class="form-inner">
+                      <label>Type Your Message</label>
+                      {{form.message|as_crispy_field}}
+                    </div>
+                    <div class="form-inner two">
+                      <button
+                        class="primary-btn3 button-hover-two"
+                        type="submit"
+                      >
+                        Send Now
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="location-map">
+                  {% for contact in contact %}
+                  <iframe
+                    src="{{contact.location_src}}"
+                    height="500"
+                    style="border: 0"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                  ></iframe>
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {% endblock body %}

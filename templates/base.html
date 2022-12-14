@@ -1,0 +1,403 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xoon - Photography Portfolio HTML Template</title>
+    <link rel="icon" href="images/sm-logo.svg" type="image/gif" sizes="20x20">
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/all.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/boxicons.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap-icons.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/jquery-ui.css' %}">
+    <link rel="stylesheet" href="{% static 'css/jquery.fancybox.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/swiper-bundle.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/slick-theme.css' %}">
+    <link rel="stylesheet" href="{% static 'css/slick.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/nice-select.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/odometer.css' %}">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.1/css/all.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.1/css/sharp-solid.css">
+    
+    <link rel="stylesheet" href="{% static 'css/custom-video-player.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body id="body" class="tt-transition tt-boxed tt-smooth-scroll tt-magic-cursor">
+
+    <div class="preloader">
+        <div class="counter">0</div>
+    </div>
+
+    <div id="magic-cursor">
+        <div id="ball"></div>
+    </div>
+    <div class="tt-style-switch index-dark">
+        <i class="bi bi-brightness-low-fill"></i>
+
+    </div>
+    <div id="smooth-wrapper">
+        <div id="smooth-content">
+
+
+            <div class="circle-container">
+                <svg class="circle-progress svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                    <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+                </svg>
+            </div>
+
+            <header class="header-area style-1">
+                {% for set in general_set %}
+                <div class="header-logo">
+                    <a href="{% url 'index' %}"><img alt="image" src="{{set.logo.url}}" style="height:33px;width:120px;object-fit:cover;"></a>
+                </div>
+                {% endfor %}
+                <div class="main-menu">
+                    <div class="mobile-logo-area d-lg-none d-flex justify-content-between align-items-center">
+                        <div class="mobile-logo-wrap ">
+                            <a href="index.html"><img alt="image" src="{% static '' %}"></a>
+                        </div>
+                        <div class="menu-close-btn">
+                            <i class="bi bi-x-lg"></i>
+                        </div>
+                    </div>
+                    <ul class="menu-list">
+                        <li class="menu-item-has-children">
+                            <a href="{% url 'index' %}" class="btn--primary1">Home</a><i class='bx bxs-circle dropdown-icon'></i>
+                            {% comment %} <ul class="submenu">
+                                <li><a href="index.html">Personal Home</a></li>
+                                <li><a href="index-video.html">Personal Home Video</a></li>
+                                <li><a href="index-personal-showcase.html">Personal Home showcase</a></li>
+                                <li><a href="index-fullscreen.html">Personal Home Fullscreen</a></li>
+                                <li><a href="index-portfolio.html">Personal Home Portfolio</a></li>
+                                <li><a href="index2.html">Agency Home</a></li>
+                                <li><a href="index2-video.html">Agency Home Video</a></li>
+                                <li><a href="index2-thumbnail-slider.html">Agency Home Thumbnail</a></li>
+                                <li><a href="index2-pagination.html">Agency Home Pagination</a></li>
+                                <li><a href="index2-center-slider.html">Agency Home Center Slider</a></li>
+                            </ul> {% endcomment %}
+                        </li>
+                        <li class="menu-item-has-children">
+                            <a href="{% url 'about' %}" class="btn--primary1">About</a><i class='bx bxs-circle dropdown-icon'></i>
+                            {% comment %} <ul class="submenu">
+                                <li><a href="about-me.html">About Me</a></li>
+                                <li><a href="about-us.html">About Us</a></li>
+                            </ul> {% endcomment %}
+                        </li>
+                        <li class="menu-item-has-children">
+                            <a href="{% url 'portfolio' %}" class="btn--primary1">Portfolio</a><i class='bx bxs-circle dropdown-icon'></i>
+                            {% comment %} <ul class="submenu">
+                                <li><a href="portfolio.html">Portfolio 01</a></li>
+                                <li><a href="portfolio-02.html">Portfolio 02</a></li>
+                                <li><a href="portfolio-03.html">Portfolio 03</a></li>
+                                <li><a href="portfolio-details.html">Portfolio Details</a></li>
+                            </ul> {% endcomment %}
+                        </li>
+                        {% comment %} <li class="menu-item-has-children"> {% endcomment %}
+                            {% comment %} <a href="#" class="btn--primary1">Blog</a><i class='bx bxs-circle dropdown-icon'></i> {% endcomment %}
+                            {% comment %} <ul class="submenu">
+                                <li><a href="blog-grid1.html">Blog Grid 01</a></li>
+                                <li><a href="blog-grid2.html">Blog Grid 02</a></li>
+                                <li><a href="blog-standard.html">Blog Standard</a></li>
+                                <li><a href="blog-details.html">Blog Details</a></li>
+                            </ul> {% endcomment %}
+                        {% comment %} </li> {% endcomment %}
+                        {% comment %} <li class="menu-item-has-children"> {% endcomment %}
+                            {% comment %} <a href="#" class="btn--primary1">Pages</a><i class='bx bxs-circle dropdown-icon'></i> {% endcomment %}
+                            {% comment %} <ul class="submenu">
+                                <li><a href="services.html">Services 01</a></li>
+                                <li><a href="services-2.html">Services 02</a></li>
+                                <li><a href="services-details.html">Services Details</a></li>
+                                <li><a href="team.html">Our Team</a></li>
+                                <li><a href="gallery.html">Gallery</a></li>
+                                <li><a href="faq.html">Faq</a></li>
+                                <li><a href="error.html">Error</a></li>
+                            </ul> {% endcomment %}
+                        {% comment %} </li> {% endcomment %}
+                        <li class="menu-item-has-children">
+                            <a href="{% url 'contact' %}" class="btn--primary1">Contact</a><i class='bx bxs-circle dropdown-icon'></i>
+                            {% comment %} <ul class="submenu">
+                                <li><a href="contact-us.html">Contact Us</a></li>
+                                <li><a href="contact-me.html">Contact Me</a></li>
+                            </ul> {% endcomment %}
+                        </li>
+                    </ul>
+                </div>
+                <div class="nav-right d-flex align-items-center">
+
+                    <div class="side-icon">
+                        <svg width="30" height="30" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M0.421875 5.12308C0.134766 5.30769 0 5.58462 0 5.99077C0 6.39692 0.146484 6.67385 0.46875 6.87077L0.673828 7H15H29.3262L29.5312 6.87077C29.8535 6.67385 30 6.39692 30 5.99077C30 5.58462 29.8652 5.30769 29.5781 5.12308C29.3848 5 29.25 5 15 5C0.75 5 0.615234 5 0.421875 5.12308Z" />
+                            <path
+                                d="M0.421875 14.125C0.140625 14.3125 0 14.5938 0 15C0 15.4062 0.140625 15.6875 0.421875 15.875C0.615234 16 0.75 16 15 16C29.25 16 29.3848 16 29.5781 15.875C29.8594 15.6875 30 15.4062 30 15C30 14.5938 29.8594 14.3125 29.5781 14.125C29.3848 14 29.25 14 15 14C0.75 14 0.615234 14 0.421875 14.125Z" />
+                            <path
+                                d="M0.723529 23.0428C0.252941 23.159 0 23.5015 0 24.0214C0 24.419 0.141176 24.6942 0.423529 24.8777C0.611765 25 0.735294 25 8 25C15.2647 25 15.3882 25 15.5765 24.8777C15.8647 24.6942 16 24.419 16 24.0153C16 23.6116 15.8529 23.3364 15.5294 23.1407C15.3235 23.0122 15.2706 23.0122 8.11765 23C4.15294 23 0.823529 23.0122 0.723529 23.0428Z" />
+                        </svg>
+                    </div>
+                </div>
+            </header>
+
+            <div class="main-nav-wrapper">
+                <div class="main-nav">
+                    <div class="menu-close-btn" id="menu-close-btn"><i class="bi bi-x-lg"></i></div>
+                    <div class="mobile-logo-area d-flex justify-content-start align-items-center">
+                        <div class="header-logo">
+                            {% for set in general_set %}
+                            <a href="{% url 'index' %}"><img alt="image" class="img-fluid"
+                                    src="{{set.logo.url}}" style="height:33px;width:120px;object-fit:cover;"></a>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="container-fluid">
+                        <div class="row align-items-center">
+                            <div class="col-lg-6 px-0">
+                                <div class="sidebar-menu-area">
+                                    <ul class="menu-list">
+                                        <li class="menu-item-has-children menu-item">
+                                            <a href="{% url 'index' %}" data-hover='Home'>Home</a>
+                                            {% comment %} <i
+                                                class='bi bi-plus-lg dropdown-icon'></i> {% endcomment %}
+                                            {% comment %} <ul class="sub-menu">
+                                                <li><a href="index.html">Personal Home</a></li>
+                                                <li><a href="index-video.html">Personal Home Video</a></li>
+                                                <li><a href="index-personal-showcase.html">Personal Home showcase</a>
+                                                </li>
+                                                <li><a href="index-fullscreen.html">Personal Home Fullscreen</a></li>
+                                                <li><a href="index-portfolio.html">Personal Home Portfolio</a></li>
+                                                <li><a href="index2.html">Agency Home</a></li>
+                                                <li><a href="index2-video.html">Agency Home Video</a></li>
+                                                <li><a href="index2-thumbnail-slider.html">Agency Home Thumbnail</a>
+                                                </li>
+                                                <li><a href="index2-pagination.html">Agency Home Pagination</a></li>
+                                                <li><a href="index2-center-slider.html">Agency Home Center Slider</a>
+                                                </li>
+                                            </ul> {% endcomment %}
+                                        </li>
+                                        <li class="menu-item-has-children menu-item">
+                                            <a href="{% url 'about' %}" class="drop-down" data-hover='About'>About</a>
+                                            {% comment %} <i
+                                                class='bi bi-plus-lg dropdown-icon'></i>
+                                            <ul class="sub-menu">
+                                                <li><a href="about-me.html">About Me</a></li>
+                                                <li><a href="about-us.html">About Us</a></li>
+                                            </ul> {% endcomment %}
+                                        </li>
+                                        <li class="menu-item-has-children menu-item">
+                                            <a href="{% url 'portfolio' %}" data-hover='Portfolio'>Portfolio</a>
+                                            {% comment %} <i
+                                                class='bi bi-plus-lg dropdown-icon'></i>
+                                            <ul class="sub-menu">
+                                                <li><a href="portfolio.html">Portfolio 01</a></li>
+                                                <li><a href="portfolio-02.html">Portfolio 02</a></li>
+                                                <li><a href="portfolio-03.html">Portfolio 03</a></li>
+                                                <li><a href="portfolio-details.html">Portfolio Details</a></li>
+                                            </ul> {% endcomment %}
+                                        </li>
+                                        {% comment %} <li class="menu-item-has-children menu-item">
+                                            <a href="blog-grid.html" data-hover='Blog'>Blog</a><i
+                                                class='bi bi-plus-lg dropdown-icon'></i>
+                                            <ul class="sub-menu">
+                                                <li><a href="blog-grid1.html">Blog Grid 01</a></li>
+                                                <li><a href="blog-grid2.html">Blog Grid 02</a></li>
+                                                <li><a href="blog-standard.html">Blog Standard</a></li>
+                                                <li><a href="blog-details.html">Blog Details</a></li>
+                                            </ul>
+                                        </li> {% endcomment %}
+                                        {% comment %} <li class="menu-item-has-children menu-item">
+                                            <a href="#" class="drop-down" data-hover='Pages'> Pages</a><i
+                                                class='bi bi-plus-lg dropdown-icon'></i>
+                                            <ul class="sub-menu">
+                                                <li><a href="services.html">Services 01</a></li>
+                                                <li><a href="services-2.html">Services 02</a></li>
+                                                <li><a href="services-details.html">Services Details</a></li>
+                                                <li><a href="team.html">Our Team</a></li>
+                                                <li><a href="gallery.html">Gallery</a></li>
+                                                <li><a href="faq.html">Faq</a></li>
+                                                <li><a href="error.html">Error</a></li>
+                                            </ul>
+                                        </li> {% endcomment %}
+                                        <li class="menu-item-has-children menu-item">
+                                            <a href="{% url 'contact' %}" class="drop-down" data-hover='Contact'> Contact </a>
+                                            {% comment %} <i
+                                                class='bi bi-plus-lg dropdown-icon'></i>
+                                            <ul class="sub-menu">
+                                                <li><a href="contact-us.html">Contact Us</a></li>
+                                                <li><a href="contact-me.html">Contact me</a></li>
+                                            </ul> {% endcomment %}
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                {% for contact in contact %}
+                                <ul class="nav-contact-list">
+                                    <li class="citem">
+                                        <h6>PHONE:</h6>
+                                        <a href="tel:+{{contact.number}}">{{contact.number}}</a>
+                                    </li>
+                                    <li class="citem">
+                                        <h6>ADDRESS:</h6>
+                                        <p>{{contact.location}}</p>
+                                    </li>
+                                    <li class="citem">
+                                        <h6>E-mail</h6>
+                                        <a>{{contact.email}}</a>
+                                    </li>
+                                    <li class="citem">
+                                        <h6>FOLLOW US:</h6>
+                                        {% for set in general_set %}
+                                        <ul class="social-icon">
+                                            
+                                            {% if set.instagram %}
+                                            <li><a href="{{set.instagram}}"><i class="fab fa-instagram"></i></a>
+                                            </li>
+                                            {% endif %}
+                                            {% if set.twitter %}
+                                            <li><a href="{{set.twitter}}"><i class="fab fa-twitter"></i></a>
+                                            </li>
+                                            {% endif %}
+                                            {% if set.youtube %}
+                                            <li><a href="{{set.youtube}}"><i class="fab fa-youtube"></i></a>
+                                            </li>
+                                            {% endif %}
+                                            {% if set.facebook %}
+                                            <li><a href="{{set.facebook}}"><i class="fab fa-facebook"></i></a>
+                                            </li>
+                                            {% endif %}
+                                        </ul>
+                                        {% endfor %}
+                                    </li>
+                                </ul>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                    <span></span>
+                </div>
+            </div>
+
+{% block body %}
+
+{% endblock body %}
+
+
+
+            <footer class="style1">
+                <div class="footer-top">
+                    <div class="container-fluid">
+                        <div class="row mb-120 justify-content-center g-4">
+                            <div class="col-xl-4 col-lg-6 justify-content-lg-start justify-content-center">
+                                <div class="footer-widget one">
+                                    <div class="widget-title">
+                                        <h4>USEFUL LINKS</h4>
+                                    </div>
+                                    <div class="menu-container">
+                                        <ul>
+                                            <li><a href="{% url 'about' %}">About</a></li>
+                                            <li><a href="{% url 'index' %}">Home</a></li>
+                                            {% comment %} <li><a href="contact-us.html">Contact Us</a></li>
+                                            <li><a href="portfolio.html">Portfolio 01</a></li> {% endcomment %}
+                                        </ul>
+                                        <ul>
+                                            <li><a href="{% url 'contact' %}">Contact</a></li>
+                                            <li><a href="{% url 'portfolio' %}">Portfolio</a></li>
+                                            {% comment %} <li><a href="#">How We Work</a></li>
+                                            <li><a href="#">Privacy Policy</a></li> {% endcomment %}
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            {% comment %} <div class="col-xl-4 col-lg-6">
+                                <div class="footer-widget two three">
+                                    <div class="widget-title">
+                                        <h4>Newsletter</h4>
+                                        <p>Subscribe to our Newsletter to receive exclusive offers, latest news and
+                                            updates.</p>
+                                    </div>
+                                    <div class="newsletter-container">
+                                        <input type="text" placeholder="Enter your Email">
+                                        <button type="submit" class="button-hover-two">SEND</button>
+                                    </div>
+                                </div>
+                            </div> {% endcomment %}
+                            <div class="col-xl-4 col-lg-10">
+                                <div class="footer-widget">
+                                    <div class="widget-title">
+                                        <h4>Follow Us</h4>
+                                    </div>
+                                    <div class="socila-container">
+                                        {% for set in general_set %}
+                                        <ul>
+                                            {% if set.instagram %}
+                                            <li><a href="{{set.instagram}}"><i class='bx bxl-instagram'></i></a></li>
+                                            {% endif %}
+                                            {% if set.youtube %}
+                                            <li><a href="{{set.youtube}}"><i class='bx bxl-youtube'></i></a></li>
+                                            {% endif %}
+                                            {% if set.facebook %}
+                                            <li><a href="set.facebook"><i class='bx bxl-facebook'></i></a></li>
+                                            {% endif %}
+                                            {% if set.twitter %}
+                                            <li><a href="{{set.twitter}}"><i class='bx bxl-twitter'></i></a></li>
+                                            {% endif %}
+                                        </ul>
+                                        {% endfor %}
+                                    </div>
+                                    {% comment %} <p>The perfect place for telling & sharing
+                                        all the stories that truly matter.</p> {% endcomment %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-btm d-flex justify-content-center">
+                    <p>Copyright 2022 <a href="#">XOON</a> | Design By <a href="#">Egens Lab.</a></p>
+                </div>
+            </footer>
+
+        </div>
+    </div>
+
+    <script data-cfasync="false" src="../../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
+    <script src="{% static 'js/jquery-ui.js' %}"></script>
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'js/wow.min.js' %}"></script>
+    <script src="{% static 'js/swiper-bundle.min.js' %}"></script>
+    <script src="{% static 'js/jquery.nice-select.js' %}"></script>
+    <script src="{% static 'js/odometer.min.js' %}"></script>
+    <script src="{% static 'js/jquery.fancybox.min.js' %}"></script>
+    <script src="{% static 'js/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'js/viewport.jquery.js' %}"></script>
+    <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'js/gsap.min.js' %}"></script>
+    <script src="{% static 'js/SmoothScroll.js' %}"></script>
+    <script src="{% static 'js/scrollToPlugin.html' %}"></script>
+    <script src="{% static 'js/sidebar.js' %}"></script>
+    <script src="{% static 'js/simpleParallax.min.js' %}"></script>
+    <script src="{% static 'js/simpleParallax.min.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+
+
+
+</html>

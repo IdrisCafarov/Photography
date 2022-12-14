@@ -1,0 +1,567 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load humanize %}
+
+
+{% block body %}
+
+            <div class="horo-style-1">
+                {% comment %} <div class="social-area">
+                    <ul>
+                        <li><a href="https://www.facebook.com/">Facebook</a></li>
+                        <li><a href="https://www.instagram.com/">instagram</a></li>
+                        <li><a href="https://www.linkedin.com/">Linked in</a></li>
+                    </ul>
+                </div> {% endcomment %}
+                <div class="container-fluid">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6 d-flex justify-content-center">
+                            {% for image in index_settings %}
+                            <div class="banner-left-img">
+                                <img class="img-fluid " src="{{image.main_image.url}}" style="width:600px;height:700px"  alt="image">
+                            </div>
+                            {% endfor %}
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="banner-slider">
+                                <div class="swiper banner-slider1">
+                                    <div class="swiper-wrapper">
+                                        {% for slider in first_sliders %}
+                                        <div class="swiper-slide">
+                                            <div class="slider-cetagory">
+                                                <h4>{{slider.title}}</h4>
+                                            </div>
+                                            <img class="img-fluid" src="{{slider.image.url}}" style="width:367.5px;height:243.133px;object-fit:cover;"
+                                                alt="image">
+                                        </div>
+                                        {% endfor %}
+                                    </div>
+                                    <div class="swiper-pagination swiper-pagination-h"></div>
+                                </div>
+                            </div>
+                            <div class="banner-right-content">
+                                {% for index in index_settings %}
+                                <h1>{{index.name_part}}</h1>
+                                <h5>{{index.profession}}</h5>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="about-style-1 pt-120 mb-120" id="about-style-1">
+                <div class="container">
+                    {% for index in index_settings %}
+                    <div class="row mb-60">
+                        <div class="col-12">
+                            <div class="section-title1">
+                                <h6>Mən kiməm?</h6>
+                                <h3>“{{index.text_1}}"</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-70">
+                        <div class="col-md-3 d-flex justify-content-center">
+                            <div class="about-img1">
+                                <img class="img-fluid  magnetic-item" src="{{index.image_1.url}}" alt="image">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="about-img2">
+                                <img class="img-fluid  magnetic-item" src="{{index.image_2.url}}" alt="image">
+                            </div>
+                        </div>
+                        <div class="col-md-3 d-flex justify-content-end align-items-end">
+                            <div class="about-img3">
+                                <img class="img-fluid magnetic-item" src="{{index.image_3.url}}" alt="image">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="about-content">
+                                <p>“{{index.text_2}}”</p>
+                                <a class="primary-btn2 " href="{% url 'about' %}">
+                                    <svg width="12" height="12" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+                                        <g clip-path="url(#clip0_126_82)">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M11.5 0.000100587C11.6326 0.000100581 11.7598 0.0527787 11.8536 0.146547C11.9473 0.240315 12 0.367492 12 0.500101L12 6.5001C12 6.63271 11.9473 6.75989 11.8536 6.85365C11.7598 6.94742 11.6326 7.0001 11.5 7.0001C11.3674 7.0001 11.2402 6.94742 11.1465 6.85365C11.0527 6.75989 11 6.63271 11 6.5001L11 1.7071L0.854021 11.8541C0.807533 11.9006 0.752344 11.9375 0.691605 11.9626C0.630865 11.9878 0.565765 12.0007 0.500021 12.0007C0.434277 12.0007 0.369177 11.9878 0.308438 11.9626C0.247698 11.9375 0.192509 11.9006 0.146021 11.8541C0.0995332 11.8076 0.0626571 11.7524 0.037498 11.6917C0.0123389 11.6309 -0.000610371 11.5658 -0.000610373 11.5001C-0.000610376 11.4344 0.0123389 11.3693 0.037498 11.3085C0.0626571 11.2478 0.0995332 11.1926 0.146021 11.1461L10.293 1.0001L5.50002 1.0001C5.36741 1.0001 5.24024 0.947423 5.14647 0.853655C5.0527 0.759887 5.00002 0.632709 5.00002 0.500101C5.00002 0.367492 5.0527 0.240315 5.14647 0.146547C5.24024 0.052779 5.36741 0.000100855 5.50002 0.000100849L11.5 0.000100587Z" />
+                                        </g>
+                                    </svg>
+                                    Daha çox Haqqımızda</a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+
+            <div class="services-area mb-120">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12 px-0">
+                            <div class="services-border">
+                                <div class="row d-flex justify-content-center">
+                                    <div class="col-lg-7 col-md-10">
+                                        <div class="services-content">
+                                            <div class="section-title1 mb--40">
+                                                <span>Biz nə edirik?</span>
+                                                <h2>Mənim Servsilərim</h2>
+                                                {% for index in index_settings %}
+                                                <p>{{index.description}}</p>
+                                                {% endfor %}
+                                            </div>
+                                            <ul class="nav nav-pills" id="pills-tab" role="tablist">
+                                                {% for service in services %}
+                                                <li class="nav-item" role="presentation">
+                                                    {% if forloop.counter == 1 %}
+                                                    <button class="nav-link services-items active" id="pills-{{service.id}}-tab"
+                                                        data-bs-toggle="pill" data-bs-target="#pills-{{service.id}}"
+                                                        type="button" role="tab" aria-controls="pills-{{service.id}}"
+                                                        aria-selected="false">
+                                                        <img src="{{service.logo.url}}" width="140" height="140" viewBox="0 0 140 140">
+                                                        {{service.name}}
+                                                    </button>
+                                                    {% else %}
+                                                    <button class="nav-link services-items" id="pills-{{service.id}}-tab"
+                                                        data-bs-toggle="pill" data-bs-target="#pills-{{service.id}}"
+                                                        type="button" role="tab" aria-controls="pills-{{service.id}}"
+                                                        aria-selected="false">
+                                                        <img src="{{service.logo.url}}" width="140" height="140" viewBox="0 0 140 140">
+                                                        {{service.name}}
+                                                    </button>
+                                                    {% endif %}
+                                                </li>
+                                                {% endfor %}
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class=" col-lg-5 col-md-8 col-sm-10">
+                                        <div class="tab-content" id="pills-tabContent">
+                                            {% for service in services %}
+                                            {% if forloop.counter == 1 %}
+                                            <div class="tab-pane fade show active" id="pills-{{service.id}}"
+                                                role="tabpanel" aria-labelledby="pills-{{service.id}}-tab">
+                                                <div class="swiper services-slider">
+                                                    <div class="swiper-wrapper">
+                                                        {% for image in service.images.all|slice:':3' %}
+                                                        <div class="swiper-slide"><a class=" magnetic-item"
+                                                                href="{{image.service.get_absolute_url}}"><img
+                                                                    class="img-fluid anim-image-parallax tt-lazy"
+                                                                    data-cursor="View<br>Services"
+                                                                    style="width:642px ;height:620px;object-fit:cover;"
+                                                                    src="{{image.image.url}}"
+                                                                    alt="image"></a></div>
+                                                        {% endfor %}
+                                                    </div>
+                                                    <div class="swiper-pagination"></div>
+                                                </div>
+                                            </div>
+                                            {% else %}
+                                            <div class="tab-pane fade show" id="pills-{{service.id}}"
+                                                role="tabpanel" aria-labelledby="pills-{{service.id}}-tab">
+                                                <div class="swiper services-slider">
+                                                    <div class="swiper-wrapper">
+                                                        {% for image in service.images.all|slice:':3' %}
+                                                        <div class="swiper-slide"><a class=" magnetic-item"
+                                                                href="{{image.service.get_absolute_url}}"><img
+                                                                    class="img-fluid anim-image-parallax tt-lazy"
+                                                                    data-cursor="View<br>Services"
+                                                                    style="width:642px ;height:620px;object-fit:cover;"
+                                                                    src="{{image.image.url}}"
+                                                                    alt="image"></a></div>
+                                                        {% endfor %}
+                                                    </div>
+                                                    <div class="swiper-pagination"></div>
+                                                </div>
+                                            </div>
+                                            {% endif %}
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="photo-gallery mb-120">
+                <div class="container">
+                    <div class="row mb-70">
+                        <div class="col-12">
+                            <div class="section-title1 text-center">
+                                <h2>See My All Photo</h2>
+                                <p>As Vintage decided to have a closer look into fast-paced New York web design realm
+                                    in.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row g-4 justify-content-center mb-50">
+                        {% for category in categories|slice:':6' %}
+                        <div class="col-lg-4 col-md-6  col-sm-8">
+                            <div class="single-img {{forloop.counter|apnumber}} magnetic-item">
+                                <img class="img-fluid" src="{{category.image.url}}" alt="image">
+                                <div class="overlay">
+                                    <a data-cursor="View<br>Details" class=" magnetic-item"
+                                        href="{{category.get_absolute_url}}">
+                                        <svg width="114" height="105" viewBox="0 0 114 105" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M8.7 104L113 1M113 1H1M113 1V104" stroke-width="2"
+                                                stroke-linecap="round" />
+                                        </svg>
+                                    </a>
+                                    <div class="gallery-content">
+                                        <h4><a data-cursor="View<br>Details" class="not-hide-cursor"
+                                                href="{{category.get_absolute_url}}">{{category.name}}</a></h4>
+                                        <span>Date: asdasd</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                        
+                        
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12 d-flex justify-content-center">
+                            <a class="primary-btn2" href="{% url 'portfolio' %}">
+                                <svg width="12" height="12" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_126_82)">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M11.5 0.000100587C11.6326 0.000100581 11.7598 0.0527787 11.8536 0.146547C11.9473 0.240315 12 0.367492 12 0.500101L12 6.5001C12 6.63271 11.9473 6.75989 11.8536 6.85365C11.7598 6.94742 11.6326 7.0001 11.5 7.0001C11.3674 7.0001 11.2402 6.94742 11.1465 6.85365C11.0527 6.75989 11 6.63271 11 6.5001L11 1.7071L0.854021 11.8541C0.807533 11.9006 0.752344 11.9375 0.691605 11.9626C0.630865 11.9878 0.565765 12.0007 0.500021 12.0007C0.434277 12.0007 0.369177 11.9878 0.308438 11.9626C0.247698 11.9375 0.192509 11.9006 0.146021 11.8541C0.0995332 11.8076 0.0626571 11.7524 0.037498 11.6917C0.0123389 11.6309 -0.000610371 11.5658 -0.000610373 11.5001C-0.000610376 11.4344 0.0123389 11.3693 0.037498 11.3085C0.0626571 11.2478 0.0995332 11.1926 0.146021 11.1461L10.293 1.0001L5.50002 1.0001C5.36741 1.0001 5.24024 0.947423 5.14647 0.853655C5.0527 0.759887 5.00002 0.632709 5.00002 0.500101C5.00002 0.367492 5.0527 0.240315 5.14647 0.146547C5.24024 0.052779 5.36741 0.000100855 5.50002 0.000100849L11.5 0.000100587Z">
+                                        </path>
+                                    </g>
+                                </svg>
+                                All Photo Here</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            {% comment %} <div class="video-area one mb-120">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="video-wraper">
+                                <video autoplay loop="loop" muted preload="auto">
+                                    <source src="{% static 'video/video-3.mp4' %}" type="video/mp4">
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> {% endcomment %}
+
+
+            {% comment %} <div class="testimonial-area mb-120">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="swiper services-slider">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <div class="testimonial-wrrap">
+                                            <div class="content">
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                                    eiusmod
+                                                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+                                                    minim.</p>
+                                            </div>
+                                            <div class="author-area">
+                                                <div class="author-name">
+                                                    <h4>Johan Martin Sr</h4>
+                                                </div>
+                                                <div class="author-img">
+                                                    <img src="images/bg/author-1.png" alt="image">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="testimonial-wrrap">
+                                            <div class="content">
+                                                <p>Quo minus id quod maxime placeat facere possimus, omnis voluptas
+                                                    assumenda est, omnis dolor repellendus. Temporibus autem quibusdam
+                                                </p>
+                                            </div>
+                                            <div class="author-area mb-50">
+                                                <div class="author-name">
+                                                    <h4>Mason Jackson.</h4>
+                                                </div>
+                                                <div class="author-img">
+                                                    <img src="images/bg/author-2.png" alt="image">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="testimonial-wrrap">
+                                            <div class="content">
+                                                <p>Et harum quidem rerum facilis est et expedita distinctio. Nam libero
+                                                    tempore, cum soluta nobis est eligendi optio cumque nihil impedit
+                                                    quo</p>
+                                            </div>
+                                            <div class="author-area">
+                                                <div class="author-name">
+                                                    <h4>Nancy Rosie</h4>
+                                                </div>
+                                                <div class="author-img">
+                                                    <img src="images/bg/author-3.png" alt="image">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-pagination"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> {% endcomment %}
+
+
+            <div class="pricing-plan-area mb-120">
+                <div class="container">
+                    <div class="row mb-70">
+                        <div class="col-12">
+                            <div class="section-title1 text-center">
+                                <h2>Pricing plan</h2>
+                                <p>As Vintage decided to have a closer look into fast-paced New York web design realm
+                                    in.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row g-4 justify-content-center">
+                        {% for offer in offers %}
+                        <div class="col-xl-4 col-lg-6 col-md-6">
+                            <div class="pricing-wrap" ="heistyleght: 600px">
+                                <div class="top-bg">
+                                    <img src="{% static 'images/icons/price-bg1.svg' %}" alt="image">
+                                </div>
+                                <div class="btm-bg">
+                                    <img src="{% static 'images/icons/price-bg2.svg' %}" alt="image">
+                                </div>
+                                <div class="pricing-title">
+                                    <h2>{{offer.name}}</h2>
+                                    <h5 class="price">
+                                        AZN {{offer.price}}</h5>
+                                </div>
+                                <ul class="pricing-features">
+                                    {% for opt in offer.options.all %}
+                                    <li>
+                                        {{opt.option}}
+                                    </li>
+                                    {% endfor %}
+                                    
+                                </ul>
+                                <div class="book-btn">
+                                    <a href="{% url 'contact' %}">Book Now</a>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+
+
+            {% comment %} <div class="news-area mb-120">
+                <div class="container">
+                    <div class="row mb-70">
+                        <div class="col-12">
+                            <div class="section-title1 text-center">
+                                <h2>News & Articles</h2>
+                                <p>As Vintage decided to have a closer look into fast-paced New York web design realm
+                                    in.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row g-4 justify-content-center">
+                        <div class="col-lg-4 col-md-6 col-sm-10">
+                            <div class="single-news magnetic-item">
+                                <img class="img-fluid" src="images/blog/news-1.png" alt="image">
+                                <div class="overlay">
+                                    <a data-cursor="View<br>Details" href="blog-details.html">
+                                        <svg width="114" height="105" viewBox="0 0 114 105" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M8.7 104L113 1M113 1H1M113 1V104" stroke-width="2"
+                                                stroke-linecap="round" />
+                                        </svg>
+                                    </a>
+                                    <div class="gallery-content">
+                                        <h4><a data-cursor="View<br>Details" href="blog-details.html">This is a great
+                                                photography blog for
+                                                food.</a></h4>
+                                        <span>January 12, 2022</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-10">
+                            <div class="single-news magnetic-item">
+                                <img class="img-fluid" src="images/blog/news-2.png" alt="image">
+                                <div class="overlay">
+                                    <a data-cursor="View<br>Detailst" href="blog-details.html">
+                                        <svg width="114" height="105" viewBox="0 0 114 105" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M8.7 104L113 1M113 1H1M113 1V104" stroke-width="2"
+                                                stroke-linecap="round" />
+                                        </svg>
+                                    </a>
+                                    <div class="gallery-content">
+                                        <h4><a data-cursor="View<br>Details" href="blog-details.html">The Best
+                                                Photography Blogs to Follow for Inspiration!</a></h4>
+                                        <span>January 12, 2022</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-10">
+                            <div class="single-news magnetic-item">
+                                <img class="img-fluid" src="images/blog/news-3.png" alt="image">
+                                <div class="overlay">
+                                    <a data-cursor="View<br>Details" href="blog-details.html">
+                                        <svg width="114" height="105" viewBox="0 0 114 105" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M8.7 104L113 1M113 1H1M113 1V104" stroke-width="2"
+                                                stroke-linecap="round" />
+                                        </svg>
+                                    </a>
+                                    <div class="gallery-content">
+                                        <h4><a data-cursor="View<br>Details" href="blog-details.html">The sky is the
+                                                limit with this blog in the world.</a></h4>
+                                        <span>January 12, 2022</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> {% endcomment %}
+
+
+            {% comment %} <div class="home1-booking-area mb-120">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-10">
+                            <div class="booking-wraper">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="section-title1 text-center">
+                                            <h2>Booking</h2>
+                                            <p>As Vintage decided to have a closer look into fast-paced New York web
+                                                design
+                                                realm in.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <form method="POST">
+                                    {% csrf_token %}
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-inner">
+                                                <label>Your Name (required)</label>
+                                                <input type="text" name="Name" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-inner">
+                                                <label>Your Phone (required)</label>
+                                                <input type="number" name="Phone" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-inner">
+                                                <label>Your E-mail (required)</label>
+                                                <input type="email" name="Email" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-inner date">
+                                                <label>Booking Date</label>
+                                                <input autocomplete="off" placeholder="" type="text" name="checkIn"
+                                                    id="datepicker" class="claender">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-inner">
+                                                <label>Type Your Message</label>
+                                                <textarea name="Text"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12 d-flex justify-content-center pt-20">
+                                            <div class="form-inner send-btn">
+                                                <button class="primary-btn3 button-hover-two" type="submit">Send
+                                                    Now</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> {% endcomment %}
+
+
+            {% comment %} <div class="instagram-feed-section mb-120">
+                <div class="container">
+                    <div class="row justify-content-lg-start justify-content-center">
+                        <div class="col-lg-4">
+                            <div class="section-title-small text-lg-start text-center">
+                                <i class="bi bi-instagram"></i><span>Instagram Feed</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fluid">
+                    <div class="swiper insta-feed-slider">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="insta-feed-single magnetic-item">
+                                    <img class="img-fluid" src="images/bg/instagram1.png" alt="image">
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="insta-feed-single magnetic-item">
+                                    <img class="img-fluid" src="images/bg/instagram2.png" alt="image">
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="insta-feed-single magnetic-item">
+                                    <img class="img-fluid" src="images/bg/instagram3.png" alt="image">
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="insta-feed-single magnetic-item">
+                                    <img class="img-fluid" src="images/bg/instagram4.png" alt="image">
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="insta-feed-single magnetic-item">
+                                    <img class="img-fluid" src="images/bg/instagram5.png" alt="image">
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="insta-feed-single magnetic-item">
+                                    <img class="img-fluid" src="images/bg/instagram6.png" alt="image">
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="insta-feed-single magnetic-item">
+                                    <img class="img-fluid" src="images/bg/instagram3.png" alt="image">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> {% endcomment %}
+{% endblock body %}
+
+            
