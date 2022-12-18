@@ -10,14 +10,14 @@
             >
               <div class="col-md-10">
                 <div class="banner-content">
-                  <h1>Our Portfolio</h1>
+                  <h1>Bizim Portfolio</h1>
                   <nav aria-label="breadcrumb">
                     <ol class="breadcrumb gap-3">
                       <li class="breadcrumb-item">
-                        <a href="{% url 'index' %}">Home</a>
+                        <a href="{% url 'index' %}">Ana Səhifə</a>
                       </li>
                       <li class="breadcrumb-item active" aria-current="page">
-                        Our Portfolio
+                        Bizim Portfolio
                       </li>
                     </ol>
                   </nav>
@@ -35,7 +35,7 @@
                   <ul
                     class="d-flex justify-content-lg-start justify-content-center flex-wrap"
                   >
-                    <li class="active" data-filter="*">All Photo</li>
+                    <li class="active" data-filter="*">Bütün İşlər</li>
                     {% comment %} <li data-filter=".wedding">Wedding</li>
                     <li data-filter=".Products">Products</li>
                     <li data-filter=".Products2">Fashion</li> {% endcomment %}
@@ -71,7 +71,7 @@
                           >{{work.name}}</a
                         >
                       </h4>
-                      <span>Date: {{work.date}}</span>
+                      <span>Tarix: {{work.date}}</span>
                     </div>
                   </div>
                 </div>

@@ -81,7 +81,7 @@
                     </div>
                     <ul class="menu-list">
                         <li class="menu-item-has-children">
-                            <a href="{% url 'index' %}" class="btn--primary1">Home</a><i class='bx bxs-circle dropdown-icon'></i>
+                            <a href="{% url 'index' %}" class="btn--primary1">Ana Səhifə</a><i class='bx bxs-circle dropdown-icon'></i>
                             {% comment %} <ul class="submenu">
                                 <li><a href="index.html">Personal Home</a></li>
                                 <li><a href="index-video.html">Personal Home Video</a></li>
@@ -96,7 +96,7 @@
                             </ul> {% endcomment %}
                         </li>
                         <li class="menu-item-has-children">
-                            <a href="{% url 'about' %}" class="btn--primary1">About</a><i class='bx bxs-circle dropdown-icon'></i>
+                            <a href="{% url 'about' %}" class="btn--primary1">Haqqımızda</a><i class='bx bxs-circle dropdown-icon'></i>
                             {% comment %} <ul class="submenu">
                                 <li><a href="about-me.html">About Me</a></li>
                                 <li><a href="about-us.html">About Us</a></li>
@@ -133,7 +133,7 @@
                             </ul> {% endcomment %}
                         {% comment %} </li> {% endcomment %}
                         <li class="menu-item-has-children">
-                            <a href="{% url 'contact' %}" class="btn--primary1">Contact</a><i class='bx bxs-circle dropdown-icon'></i>
+                            <a href="{% url 'contact' %}" class="btn--primary1">Əlaqə</a><i class='bx bxs-circle dropdown-icon'></i>
                             {% comment %} <ul class="submenu">
                                 <li><a href="contact-us.html">Contact Us</a></li>
                                 <li><a href="contact-me.html">Contact Me</a></li>
@@ -173,7 +173,7 @@
                                 <div class="sidebar-menu-area">
                                     <ul class="menu-list">
                                         <li class="menu-item-has-children menu-item">
-                                            <a href="{% url 'index' %}" data-hover='Home'>Home</a>
+                                            <a href="{% url 'index' %}" data-hover='Home'>Ana Səhifə</a>
                                             {% comment %} <i
                                                 class='bi bi-plus-lg dropdown-icon'></i> {% endcomment %}
                                             {% comment %} <ul class="sub-menu">
@@ -193,7 +193,7 @@
                                             </ul> {% endcomment %}
                                         </li>
                                         <li class="menu-item-has-children menu-item">
-                                            <a href="{% url 'about' %}" class="drop-down" data-hover='About'>About</a>
+                                            <a href="{% url 'about' %}" class="drop-down" data-hover='About'>Haqqımızda</a>
                                             {% comment %} <i
                                                 class='bi bi-plus-lg dropdown-icon'></i>
                                             <ul class="sub-menu">
@@ -236,7 +236,7 @@
                                             </ul>
                                         </li> {% endcomment %}
                                         <li class="menu-item-has-children menu-item">
-                                            <a href="{% url 'contact' %}" class="drop-down" data-hover='Contact'> Contact </a>
+                                            <a href="{% url 'contact' %}" class="drop-down" data-hover='Contact'>Əlaqə</a>
                                             {% comment %} <i
                                                 class='bi bi-plus-lg dropdown-icon'></i>
                                             <ul class="sub-menu">
@@ -251,7 +251,7 @@
                                 {% for contact in contact %}
                                 <ul class="nav-contact-list">
                                     <li class="citem">
-                                        <h6>PHONE:</h6>
+                                        <h6>ƏLAQƏ NÖMRƏSİ:</h6>
                                         <a href="tel:+{{contact.number}}">{{contact.number}}</a>
                                     </li>
                                     <li class="citem">
@@ -263,7 +263,7 @@
                                         <a>{{contact.email}}</a>
                                     </li>
                                     <li class="citem">
-                                        <h6>FOLLOW US:</h6>
+                                        <h6>BİZİ İZLƏ:</h6>
                                         {% for set in general_set %}
                                         <ul class="social-icon">
                                             
@@ -308,17 +308,17 @@
                             <div class="col-xl-4 col-lg-6 justify-content-lg-start justify-content-center">
                                 <div class="footer-widget one">
                                     <div class="widget-title">
-                                        <h4>USEFUL LINKS</h4>
+                                        <h4>FAYDALI LİNKLƏR</h4>
                                     </div>
                                     <div class="menu-container">
                                         <ul>
-                                            <li><a href="{% url 'about' %}">About</a></li>
-                                            <li><a href="{% url 'index' %}">Home</a></li>
+                                            <li><a href="{% url 'about' %}">Haqqımızda</a></li>
+                                            <li><a href="{% url 'index' %}">Ana Səhifə</a></li>
                                             {% comment %} <li><a href="contact-us.html">Contact Us</a></li>
                                             <li><a href="portfolio.html">Portfolio 01</a></li> {% endcomment %}
                                         </ul>
                                         <ul>
-                                            <li><a href="{% url 'contact' %}">Contact</a></li>
+                                            <li><a href="{% url 'contact' %}">Əlaqə</a></li>
                                             <li><a href="{% url 'portfolio' %}">Portfolio</a></li>
                                             {% comment %} <li><a href="#">How We Work</a></li>
                                             <li><a href="#">Privacy Policy</a></li> {% endcomment %}
@@ -342,7 +342,7 @@
                             <div class="col-xl-4 col-lg-10">
                                 <div class="footer-widget">
                                     <div class="widget-title">
-                                        <h4>Follow Us</h4>
+                                        <h4>Bizi İzlə</h4>
                                     </div>
                                     <div class="socila-container">
                                         {% for set in general_set %}

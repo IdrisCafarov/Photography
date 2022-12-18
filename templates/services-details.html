@@ -31,7 +31,7 @@
                   <nav aria-label="breadcrumb">
                     <ol class="breadcrumb gap-3">
                       <li class="breadcrumb-item">
-                        <a href="{% url 'index' %}">Home</a>
+                        <a href="{% url 'index' %}">Ana Səhifə</a>
                       </li>
                       <li class="breadcrumb-item active" aria-current="page">
                         {{service.name}}
@@ -69,8 +69,8 @@
                   </p> {% endcomment %}
                   <a
                     class="primary-btn4 button-hover-two"
-                    href="contact-me.html"
-                    >Get A Request</a
+                    href="{% url 'contact' %}"
+                    >Xidmətdən Yararlanın</a
                   >
                 </div>
               </div>
@@ -83,11 +83,11 @@
                   />
                   <div class="overlay">
                     <div class="intro-banner-content">
-                      <h4>DO YOU HAVE A PROJECT IN YOUR MIND</h4>
+                      <h4>AĞLINDA YENİ BİR PROYEKT VAR?</h4>
                       <a
                         class="primary-btn4 button-hover-two"
-                        href="portfolio.html"
-                        >Contact Us</a
+                        href="{% url 'contact' %}"
+                        >Bizimlə Əlaqə</a
                       >
                     </div>
                   </div>
@@ -121,7 +121,7 @@
                         <a
                           class="primary-btn4 button-hover-two"
                           href="{% url 'about' %}"
-                          >Read More</a
+                          >Daha Çox Oxu</a
                         >
                         {% endfor %}
                       </div>
@@ -141,7 +141,7 @@
                   <div class="row">
                     <div class="col-12">
                       <div class="section-title1 text-center">
-                        <h2>Booking</h2>
+                        <h2>Rezerv</h2>
                         <p>
                           As Vintage decided to have a closer look into
                           fast-paced New York web design realm in.
@@ -154,31 +154,31 @@
                     <div class="row">
                       <div class="col-md-6">
                         <div class="form-inner">
-                          <label>Your Name (required)</label>
+                          <label>Sizin Adınız (tələb olunur)</label>
                           {{form.name|as_crispy_field}}
                         </div>
                       </div>
                       <div class="col-md-6">
                         <div class="form-inner">
-                          <label>Your Phone (required)</label>
+                          <label>Sizin Nömrəniz (tələb olunur)</label>
                           {{form.number|as_crispy_field}}
                         </div>
                       </div>
                       <div class="col-md-6">
                         <div class="form-inner">
-                          <label>Your E-mail (required)</label>
-                          {{form.email|as_crispy_field}}>
+                          <label>Sizin E-mail (tələb olunur)</label>
+                          {{form.email|as_crispy_field}}
                         </div>
                       </div>
                       <div class="col-md-6">
                         <div class="form-inner date">
-                          <label>Booking Date</label>
+                          <label>Rezerv Tarixi</label>
                           {{form.book_date|as_crispy_field}}
                         </div>
                       </div>
                       <div class="col-md-12">
                         <div class="form-inner">
-                          <label>Type Your Message</label>
+                          <label>Mesajınızı qeyd edin</label>
                           {{form.message|as_crispy_field}}
                         </div>
                       </div>
@@ -190,7 +190,7 @@
                             class="primary-btn3 button-hover-two"
                             type="submit"
                           >
-                            Send Now
+                            İndi Göndər
                           </button>
                         </div>
                       </div>

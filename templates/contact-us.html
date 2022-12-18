@@ -26,14 +26,14 @@
                             </div>
                         </div>
                 <div class="banner-content">
-                  <h1>Contact Us</h1>
+                  <h1>Əlaqə</h1>
                   <nav aria-label="breadcrumb">
                     <ol class="breadcrumb gap-3">
                       <li class="breadcrumb-item">
-                        <a href="{% url 'index' %}">Home</a>
+                        <a href="{% url 'index' %}">Ana Səhifə</a>
                       </li>
                       <li class="breadcrumb-item active" aria-current="page">
-                        Contact Us
+                        Əlaqə
                       </li>
                     </ol>
                   </nav>
@@ -97,16 +97,16 @@
               <div class="col-lg-6">
                 <div class="contact-form">
                   <div class="number-of-comment">
-                    <h5>Get a Message</h5>
+                    <h5>Təkliflərinizi Bölüşün..!</h5>
                   </div>
                   <form method="POST">
                     {% csrf_token %}
                     <div class="form-inner">
-                      <label>Your Name (required)</label>
+                      <label>Sizin Adınız (tələb olunur)</label>
                       {{form.name|as_crispy_field}}
                     </div>
                     <div class="form-inner">
-                      <label>Your E-mail (required)</label>
+                      <label>Sizin E-mail (tələb olunur)</label>
                       {{form.email|as_crispy_field}}
                     </div>
                     <div class="form-inner">
@@ -118,7 +118,7 @@
                         class="primary-btn3 button-hover-two"
                         type="submit"
                       >
-                        Send Now
+                        İndi Göndər
                       </button>
                     </div>
                   </form>
