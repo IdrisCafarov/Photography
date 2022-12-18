@@ -1,7 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-  <!-- Mirrored from demo-egenslab.b-cdn.net/html/xoon/preview/error.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 02 Dec 2022 13:37:23 GMT -->
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -9,7 +8,7 @@
     <title>Xoon - Photography Portfolio HTML Template</title>
     <link
       rel="icon"
-      href="assets/images/sm-logo.svg"
+      href="images/sm-logo.svg"
       type="image/gif"
       sizes="20x20"
     />
@@ -72,10 +71,10 @@
           </svg>
         </div>
 
-        <header class="header-area style-3">
+        {% comment %} <header class="header-area style-3">
           <div class="header-logo">
             <a href="index.html"
-              ><img alt="image" src="assets/images/header-logo.svg"
+              ><img alt="image" src="images/header-logo.svg"
             /></a>
           </div>
           <div class="main-menu">
@@ -84,7 +83,7 @@
             >
               <div class="mobile-logo-wrap">
                 <a href="index.html"
-                  ><img alt="image" src="assets/images/header-logo.svg"
+                  ><img alt="image" src="images/header-logo.svg"
                 /></a>
               </div>
               <div class="menu-close-btn">
@@ -202,9 +201,9 @@
               </svg>
             </div>
           </div>
-        </header>
+        </header> {% endcomment %}
 
-        <div class="main-nav-wrapper">
+        {% comment %} <div class="main-nav-wrapper">
           <div class="main-nav">
             <div class="menu-close-btn" id="menu-close-btn">
               <i class="bi bi-x-lg"></i>
@@ -217,7 +216,7 @@
                   ><img
                     alt="image"
                     class="img-fluid"
-                    src="assets/images/header-logo2.svg"
+                    src="images/header-logo2.svg"
                 /></a>
               </div>
             </div>
@@ -393,9 +392,9 @@
             </div>
             <span></span>
           </div>
-        </div>
+        </div> {% endcomment %}
 
-        <div class="inner-page-banner">
+        {% comment %} <div class="inner-page-banner">
           <div class="container">
             <div
               class="row justify-content-center align-items-center text-center"
@@ -417,7 +416,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> {% endcomment %}
 
         <div class="error-page pt-120 mb-120">
           <div class="container">
@@ -426,7 +425,7 @@
                 <div class="bacground-img">
                   <img
                     class="img-fluid"
-                    src="assets/images/bg/error-bg.png"
+                    src="{% static 'images/bg/error-bg.png' %}"
                     alt="image"
                   />
                 </div>
@@ -437,7 +436,7 @@
                     The page you are looking for might have been removed had its
                     name changed or is temporarily unavailable.
                   </p>
-                  <a class="primary-btn3 button-hover-two" href="index.html"
+                  <a class="primary-btn3 button-hover-two" href="{% url 'index' %}"
                     >Back To Home</a
                   >
                 </div>
@@ -447,7 +446,7 @@
         </div>
 
         <footer class="style1">
-          <div class="footer-top">
+          {% comment %} <div class="footer-top">
             <div class="container-fluid">
               <div class="row mb-120 justify-content-center g-4">
                 <div
@@ -519,7 +518,7 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> {% endcomment %}
           <div class="footer-btm d-flex justify-content-center">
             <p>
               Copyright 2022 <a href="#">XOON</a> | Design By
