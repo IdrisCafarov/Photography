@@ -27,7 +27,7 @@ urlpatterns = [
 
 
 handler404 = 'blog.views.handler404'
-# handler404 = 'blog.views.handler500'
+handler500 = 'blog.views.handler500'
 
 
 if settings.DEBUG:

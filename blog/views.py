@@ -124,3 +124,8 @@ def contact(request):
 def handler404(request, exception):
     return render(request, "error.html", {})
 
+
+def handler500(request, exception):
+    return render(request, "error.html", {})
+
+
