@@ -3,7 +3,7 @@ from blog.models import *
 from .options import NUMBERTYPE
 from .forms import BookForm, MessageForm
 from django.contrib import messages
-from django.shortcuts import render_to_response
+# from django.shortcuts import render_to_response
 from django.template import RequestContext
 # from django.shortcuts import render_to_response
 
@@ -128,14 +128,14 @@ def contact(request):
 
 
 def handler404(request, *args, **argv):
-    response = render_to_response('error.html', {},
+    response = render(request,'error.html', {},
                                   context_instance=RequestContext(request))
     response.status_code = 404
     return response
 
 
 def handler500(request, *args, **argv):
-    response = render_to_response('error.html', {},
+    response = render(request,'error.html', {},
                                   context_instance=RequestContext(request))
     response.status_code = 500
     return response
