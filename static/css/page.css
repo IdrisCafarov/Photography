@@ -1,8 +1,15 @@
 @import url('https://rsms.me/inter/inter.css');
 
+
+
+
+
 html {
     font-family: 'Inter', sans-serif;
 }
+
+
+
 
 @supports (font-variation-settings: normal) {
     html {
@@ -54,17 +61,10 @@ html {
   justify-content: center;
   cursor: pointer;
   padding: 0 6px;
-  @media (hover: hover) {
-    &:hover {
-      background: lighten(#202020, 3%);
-    }
-  }
-  &:active {
-      background: lighten(#202020, 3%);
-  }
+  
 }
 
 .pagination\:active {
-  background: lighten(#202020, 3%);
+  background: #FA6350;
   position: relative;
 }

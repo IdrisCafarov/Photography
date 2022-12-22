@@ -84,30 +84,36 @@
               </div>
               {% endfor %}
 
-              <div class="pagination:container">
+              <div class="pagination:container flex-wrap">
 
                 {% if images.has_previous %}
+                <a href="?page={{blogs.previous_page_number}}">
                     <div class="pagination:number arrow">
-                      <a href="?page={{blogs.previous_page_number}}">
+                      
                       <svg width="18" height="18">
                         <use xlink:href="#left" />
                       </svg>
-                    </a> 
+                    
                     </div> 
+                  </a> 
                 {% endif %}
 
 
 
                 {% for pg in images.paginator.page_range %}
                 {% if images.number == pg %}
+                <a href="?page={{pg}}">
                 <div class="pagination:number pagination:active">
-                  <a href="?page={{pg}}">{{pg}}</a>
+                  {{pg}}
                 </div>
+                </a>
                 
                 {% else %}
+                <a href="?page={{pg}}">
                 <div class="pagination:number">
-                  <a href="?page={{pg}}">{{pg}}</a>
+                  {{pg}}
                 </div>
+                </a>
                 {% endif %}
                 {% endfor %}
                 
