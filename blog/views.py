@@ -3,6 +3,7 @@ from blog.models import *
 from .options import NUMBERTYPE
 from .forms import BookForm, MessageForm
 from django.contrib import messages
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 # from django.shortcuts import render_to_response
 from django.template import RequestContext
 # from django.shortcuts import render_to_response
@@ -67,6 +68,20 @@ def portfolio(request):
 def portfolio_details(request,slug):
     context = {}
     work = get_object_or_404(Work,slug=slug)
+    images = Images.objects.filter(work_id=work.id)
+
+    page = request.GET.get('page')
+    paginator = Paginator(images, 6)
+    
+    try:
+        images=paginator.page(page)
+    
+    except PageNotAnInteger:
+        images= paginator.page(1)
+    except EmptyPage:
+    
+        images=paginator.page(paginator.num_pages)
+
 
     if request.method == 'POST':
         form = BookForm(request.POST)
@@ -81,6 +96,8 @@ def portfolio_details(request,slug):
         form = BookForm()
 
     context['form'] = form
+
+    context['images'] = images
 
     context["work"] = work
 
