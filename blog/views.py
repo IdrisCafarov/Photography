@@ -71,7 +71,7 @@ def portfolio_details(request,slug):
     images = Images.objects.filter(work_id=work.id)
 
     page = request.GET.get('page')
-    paginator = Paginator(images, 6)
+    paginator = Paginator(images, 9)
     
     try:
         images=paginator.page(page)
