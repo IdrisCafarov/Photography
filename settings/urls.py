@@ -21,7 +21,7 @@ from django.conf.urls import handler400
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('dashboard244/', admin.site.urls),
     path('', include("blog.urls")),
 ]
 
